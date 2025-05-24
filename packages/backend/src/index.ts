@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cors from "cors";
+
 import postsRouter from "./infrastructure/http/routes/posts";
 
 dotenv.config();
@@ -14,6 +16,7 @@ if (!mongoUri) {
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use("/posts", postsRouter);
 
