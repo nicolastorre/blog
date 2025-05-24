@@ -1,9 +1,12 @@
-import { CreatePost } from "./application/useCases/CreatePost";
+import { CreatePostUseCase } from "./application/useCases/CreatePostUseCase";
+import { ListPostsUseCase } from "./application/useCases/ListPostsUseCase";
 import { PostRepositoryImpl } from "./infrastructure/db/mongoose/repositories/PostRepositoriesImpl";
 
 const postRepositoryImpl = new PostRepositoryImpl();
-const createPostUseCase = new CreatePost(postRepositoryImpl);
+const createPostUseCase = new CreatePostUseCase(postRepositoryImpl);
+const listPostUseCase = new ListPostsUseCase(postRepositoryImpl);
 
 export const container = {
   createPostUseCase,
+  listPostUseCase,
 };

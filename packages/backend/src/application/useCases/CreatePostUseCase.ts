@@ -1,7 +1,7 @@
 import { IPost } from "domain/interfaces/entities/IPost";
 import { IPostRepository } from "domain/interfaces/repositories/IPostRepository";
 
-export class CreatePost {
+export class CreatePostUseCase {
   constructor(private postRepository: IPostRepository) {}
 
   async execute(postData: Omit<IPost, "id">): Promise<IPost> {
