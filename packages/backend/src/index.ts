@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import postsRouter from "./infrastructure/http/routes/posts";
 
 dotenv.config();
 
@@ -13,6 +14,8 @@ if (!mongoUri) {
 
 const app = express();
 app.use(express.json());
+
+app.use("/posts", postsRouter);
 
 mongoose
   .connect(mongoUri)
