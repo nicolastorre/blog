@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev:backend": "yarn workspace backend dev",
+    "start:backend": "yarn workspace backend start",
+    "dev:frontend": "yarn workspace frontend dev"
+  }
+}
